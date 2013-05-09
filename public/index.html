@@ -12,17 +12,19 @@
     <div id="wrapper">
       <form ng-submit="startMeeting()" ng-hide="started">
         <p>
-          Number of people<br />
-          <input type="text" ng-model="numberOfPeople" />
+          <p>Number of people</p>
+          <p><input type="text" ng-model="numberOfPeople" /></p>
         </p>
         <p>
-          Cost per person per hour (in &pound;)<br />
-          (double salary per hour to get rough cost for company)<br />
-          <input type="text" ng-model="costPerHour" />
+          <p>
+            Cost per person per hour (in &pound;)<br />
+            (double salary per hour to get rough cost for company)
+          </p>
+          <p><input type="text" ng-model="costPerHour" /></p>
         </p>
         <p>
-          Meeting length (in minutes)<br />
-          <input type="text" ng-model="meetingLengthInMinutes" />
+          <p>Meeting length (in minutes)</p>
+          <p><input type="text" ng-model="meetingLengthInMinutes" /></p>
         </p>
         <p>Estimated cost of meeting: {{costForTime(meetingLengthInSeconds()) | currency:"&pound;"}}</p>
         <input type="submit" value="Start!" />

@@ -31,9 +31,19 @@
 .overrun-time {
   margin: 0px;
   font-size: 5em;
+  color: #bc3725;
 }
 
 .people-count {
   margin: 80px;
 }
 
+input[type="text"] {
+  font-size: 1.2em;
+  text-align: center;
+  width: 5em;
+}
+
+input[type="submit"] {
+  font-size: 200px;
+}
