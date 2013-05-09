@@ -16,6 +16,7 @@ function MeetingCtrl($scope) {
     $scope.startTime = Date.now();
     $scope.started = true;
     setCheckpoint();
+    $('#progress-bar').progressbar({max: $scope.meetingLengthInSeconds(), value: 0})
     setInterval($scope.tick, 1000);
   }
 
@@ -32,12 +33,17 @@ function MeetingCtrl($scope) {
     $scope.elapsedTime = (now - $scope.startTime) / 1000;
     var checkpointElapsedTime = (Date.now() - checkpointTime) / 1000;
     $scope.totalCost = checkpointTotal + $scope.costForTime(checkpointElapsedTime);
+    updateProgressBar();
     $scope.$apply();
   }
 
   $scope.costForTime = function(timeInSeconds) {
     var costPerPersonPerSecond = $scope.costPerHour / 3600
     return $scope.numberOfPeople * costPerPersonPerSecond * timeInSeconds;
+  }
+
+  $scope.meetingLengthInSeconds = function() {
+    return $scope.meetingLengthInMinutes * 60;
   }
 
   var changePeople = function(newNumberOfPeople) {
@@ -52,4 +58,17 @@ function MeetingCtrl($scope) {
     checkpointTime = Date.now();
     checkpointTotal = $scope.totalCost;
   }
+
+  var updateProgressBar = function() {
+    $('#progress-bar').progressbar({value: $scope.elapsedTime})
+    var percentageComplete = $scope.elapsedTime / ($scope.meetingLengthInSeconds())
+    if(percentageComplete > 0.9) {
+      $('#progress-bar').removeClass('amber')
+      $('#progress-bar').addClass('red')
+    }
+    else if(percentageComplete > 0.5) {
+      $('#progress-bar').addClass('amber')
+    }
+  }
+
 }

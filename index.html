@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html ng-app>
   <head>
+    <script src="jquery-1.9.1.js"></script>
+    <script src="jquery-ui-1.10.3.custom.min.js"></script>
     <script src="angular.js"></script>
     <script src="meeting.js"></script>
+    <link rel="stylesheet" href="jquery-ui-1.10.3.custom.min.css">
     <link rel="stylesheet" href="style.css">
   </head>
   <body ng-controller="MeetingCtrl">
@@ -21,12 +24,13 @@
           Meeting length (in minutes)<br />
           <input type="text" ng-model="meetingLengthInMinutes" />
         </p>
-        <p>Estimated cost of meeting: {{costForTime(meetingLengthInMinutes * 60) | currency:"&pound;"}}</p>
+        <p>Estimated cost of meeting: {{costForTime(meetingLengthInSeconds()) | currency:"&pound;"}}</p>
         <input type="submit" value="Start!" />
       </form>
 
       <div id="main-panel" ng-show="started" >
         <p class="total-cost">{{ totalCost | currency:"&pound;" }}</p>
+        <div id="progress-bar"></div>
         <p>
           Number of people: {{numberOfPeople}}
           <input type="button" ng-click="decrementPeople()" value="-" />
