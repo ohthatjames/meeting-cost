@@ -8,7 +8,14 @@
   <body ng-controller="MeetingCtrl">
     <div id="wrapper">
       <form ng-submit="startMeeting()" ng-hide="started">
-        <input type="text" ng-model="numberOfPeople" />
+        <p>
+          Number of people<br />
+          <input type="text" ng-model="numberOfPeople" />
+        </p>
+        <p>
+          Cost per person per hour (in &pound;)<br />
+          <input type="text" ng-model="costPerHour" />
+        </p>
         <input type="submit" value="Start!" />
       </form>
 

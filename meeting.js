@@ -1,6 +1,6 @@
 function MeetingCtrl($scope) {
   $scope.numberOfPeople = 4;
-  $scope.costPerPersonPerSecond = 1000 / 3600 // £10 p/h
+  $scope.costPerHour = 10;
   $scope.startTime = null;
   $scope.totalCost = 0;
   $scope.elapsedTime = 0;
@@ -30,7 +30,8 @@ function MeetingCtrl($scope) {
     var now = Date.now();
     $scope.elapsedTime = (now - $scope.startTime) / 1000;
     var checkpointElapsedTime = (Date.now() - checkpointTime) / 1000;
-    $scope.totalCost = checkpointTotal + $scope.numberOfPeople * $scope.costPerPersonPerSecond * checkpointElapsedTime / 100;
+    var costPerPersonPerSecond = $scope.costPerHour / 3600
+    $scope.totalCost = checkpointTotal + $scope.numberOfPeople * costPerPersonPerSecond * checkpointElapsedTime;
     $scope.$apply();
   }
 
