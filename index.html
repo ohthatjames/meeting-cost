@@ -12,7 +12,14 @@
         <input type="submit" value="Start!" />
       </form>
 
-      <p ng-show="started" class="total-cost">{{ totalCost | currency:"&pound;" }}</p>
+      <div id="main-panel" ng-show="started" >
+        <p class="total-cost">{{ totalCost | currency:"&pound;" }}</p>
+        <p>
+          Number of people: {{numberOfPeople}}
+          <a href="" ng-click="decrementPeople()">-</a>
+          <a href="" ng-click="incrementPeople()">+</a>
+        </p>
+      </div>
     </div>
   </body>
 </html>
