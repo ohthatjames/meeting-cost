@@ -16,8 +16,8 @@
         <p class="total-cost">{{ totalCost | currency:"&pound;" }}</p>
         <p>
           Number of people: {{numberOfPeople}}
-          <a href="" ng-click="decrementPeople()">-</a>
-          <a href="" ng-click="incrementPeople()">+</a>
+          <input type="button" ng-click="decrementPeople()" value="-" />
+          <input type="button" ng-click="incrementPeople()" value="+" />
         </p>
       </div>
     </div>
