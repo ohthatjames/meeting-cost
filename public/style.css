@@ -1,15 +1,16 @@
 #wrapper {
-  margin: 50px auto;
+  margin: 100px auto;
   text-align: center;
 }
 
 .total-cost {
   font-size: 10em;
+  margin: 40px;
 }
 
 #progress-bar {
-  width: 50%;
-  margin: 0 auto;
+  width: 25em;
+  margin: 40px auto 40px auto;
 }
 
 #progress-bar .ui-widget-header {
@@ -26,3 +27,13 @@
   background: #bc3725;
   border-color: #bc3725;
 }
+
+.overrun-time {
+  margin: 0px;
+  font-size: 5em;
+}
+
+.people-count {
+  margin: 80px;
+}
+
