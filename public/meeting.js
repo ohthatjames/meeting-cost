@@ -52,7 +52,6 @@ function MeetingCtrl($scope) {
 
   $scope.meetingOverrunBySeconds = function() {
     if($scope.meetingHasExceededLength()) {
-      console.log($scope.elapsedTime - $scope.meetingLengthInSeconds())
       return $scope.elapsedTime - $scope.meetingLengthInSeconds();
     }
     else {
