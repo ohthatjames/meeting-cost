@@ -35,6 +35,9 @@ function MeetingCtrl($scope) {
   }
 
   var changePeople = function(newNumberOfPeople) {
+    if(newNumberOfPeople < 1) {
+      return;
+    }
     $scope.numberOfPeople = newNumberOfPeople;
     setCheckpoint();
   }
