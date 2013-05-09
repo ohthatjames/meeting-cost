@@ -3,15 +3,16 @@
   <head>
     <script src="angular.js"></script>
     <script src="meeting.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <div ng-controller="MeetingCtrl">
-      <form ng-submit="startMeeting()">
+  <body ng-controller="MeetingCtrl">
+    <div id="wrapper">
+      <form ng-submit="startMeeting()" ng-hide="started">
         <input type="text" ng-model="numberOfPeople" />
         <input type="submit" value="Start!" />
       </form>
 
-      <p>Total cost: {{ totalCost | currency:"&pound;" }}</p>
+      <p ng-show="started" class="total-cost">{{ totalCost | currency:"&pound;" }}</p>
     </div>
   </body>
 </html>
