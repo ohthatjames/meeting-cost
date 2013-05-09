@@ -41,7 +41,7 @@ body {
   margin: 80px;
 }
 
-input[type="text"] {
+input[type="number"] {
   font-size: 1.2em;
   text-align: center;
   width: 5em;
