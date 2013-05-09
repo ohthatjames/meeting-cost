@@ -30,7 +30,11 @@
 
       <div id="main-panel" ng-show="started" >
         <p class="total-cost">{{ totalCost | currency:"&pound;" }}</p>
-        <div id="progress-bar"></div>
+        <div id="progress-bar" ng-hide="meetingHasExceededLength()"></div>
+        <div ng-show="meetingHasExceededLength()">
+          Your meeting has overrun by:
+          <p>{{meetingOverrunBySeconds() * 1000 | date:"mm:ss"}}</p>
+        </div>
         <p>
           Number of people: {{numberOfPeople}}
           <input type="button" ng-click="decrementPeople()" value="-" />

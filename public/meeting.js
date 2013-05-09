@@ -46,6 +46,20 @@ function MeetingCtrl($scope) {
     return $scope.meetingLengthInMinutes * 60;
   }
 
+  $scope.meetingHasExceededLength = function() {
+    return $scope.elapsedTime > $scope.meetingLengthInSeconds();
+  }
+
+  $scope.meetingOverrunBySeconds = function() {
+    if($scope.meetingHasExceededLength()) {
+      console.log($scope.elapsedTime - $scope.meetingLengthInSeconds())
+      return $scope.elapsedTime - $scope.meetingLengthInSeconds();
+    }
+    else {
+      return 0;
+    }
+  }
+
   var changePeople = function(newNumberOfPeople) {
     if(newNumberOfPeople < 1) {
       return;
