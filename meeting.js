@@ -1,6 +1,6 @@
 function MeetingCtrl($scope) {
   $scope.numberOfPeople = 4;
-  $scope.costPerHour = 10;
+  $scope.costPerHour = 20;
   $scope.meetingLengthInMinutes = 30;
   $scope.startTime = null;
   $scope.totalCost = 0;
