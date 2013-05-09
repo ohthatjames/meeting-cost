@@ -1,3 +1,6 @@
+body {
+  font-family: arial, sans-serif;
+}
 #wrapper {
   margin: 100px auto;
   text-align: center;
@@ -42,8 +45,29 @@ input[type="text"] {
   font-size: 1.2em;
   text-align: center;
   width: 5em;
+  border-radius: 6px;
+  border: 1px solid gray;
+  background-color: #F7F7F7;
+  padding: 0.3em;
+  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
 }
 
-input[type="submit"] {
-  font-size: 200px;
+input[type="submit"], input[type="button"] {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  color: #fff;
+  background-image: linear-gradient(to bottom,#16afc7 0,#16afc7 45%,#0896ac 100%);
+  border: 1px solid #067182;
+  border-radius: 6px;
+  text-shadow: rgba(0, 0, 0, 0.8) 0px 0px 8px;
+}
+
+input[type="button"] {
+  font-size: 0.8em;
+  padding: 0.3em 0.6em;
+}
+
+input[type="submit"]:hover {
+  opacity: 0.8;
 }
